@@ -1,14 +1,16 @@
-body, html, div, blockquote, img, label, p, h1, h2, h3, h4, h5, h6, pre, ul, ol, li, dl, dt, dd, form, a, fieldset, input, th, td {
+* {
   margin: 0;
   padding: 0;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
-th, td {
-padding: 6px;
+th,
+td {
+  padding: 6px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
@@ -20,11 +22,12 @@ body {
 }
 
 header {
-  background: #209bf4;
+  background: #02797f;
   height: 60px;
 }
 
-header h1, header h1 a{
+header h1,
+header h1 a {
   display: inline-block;
   font-family: "Maven Pro";
   font-size: 28px;
@@ -48,13 +51,18 @@ header h1:hover {
 }
 
 .courseList {
-  background: #adbcef;
+  background: #80b0b1;
   padding: 16px;
 }
 
 .courseList h2 {
   font-size: 20px;
   padding: 8px 6px 10px;
+}
+
+h2 {
+  padding-bottom: 50px;
+  padding-top: 24px;
 }
 
 .courseContainer {
@@ -66,8 +74,9 @@ header h1:hover {
   margin-bottom: 10px;
 }
 
-.courseList li:hover, a.active {
-  background: #adbcef;
+.courseList li:hover,
+a.active {
+  background: #80b0b1;
 }
 
 .courseList a {
@@ -79,8 +88,8 @@ header h1:hover {
   outline: 0;
 }
 
-.courseList h2 > a {
-  color: #236fff;
+.courseList h2>a {
+  color: #02797f;
   font-size: 15px;
   float: right;
   font-weight: normal;
@@ -92,7 +101,7 @@ header h1:hover {
   margin-top: 15px;
 }
 
-label > strong {
+label>strong {
   display: inline-block;
   vertical-align: top;
   text-align: right;
@@ -101,7 +110,8 @@ label > strong {
   font-size: 15px;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 2px 0 3px 3px;
   width: 400px;
   margin-bottom: 15px;
@@ -137,7 +147,7 @@ button.delete {
   padding: 0 !important;
   margin-left: 10px;
   cursor: pointer;
-  color: #236fff;
+  color: #02797f;
   font-size: 15px;
   font-weight: normal;
   text-decoration: none;
@@ -148,7 +158,7 @@ button.delete:hover {
 }
 
 h2 a {
-  color: #236fff;
+  color: #02797f;
   font-size: 15px;
   font-weight: normal;
   margin: 3px 12px 0 12px;
@@ -160,7 +170,7 @@ h2 a:hover {
 }
 
 .form-actions a {
-  color: #236fff;
+  color: #02797f;
   font-size: 15px;
   margin: 3px 12px 0 12px;
   text-decoration: none;
@@ -181,4 +191,48 @@ input.search {
   display: grid;
   justify-content: center;
   align-content: center;
+}
+
+.blueTee {
+  color: blue;
+  font-weight: bold;
+}
+
+.darkGreenTee {
+  color: rgb(19, 78, 19);
+  font-weight: bold;
+}
+
+.greyTee {
+  color: grey;
+  font-weight: bold;
+}
+
+.playerOne,
+.playerTwo,
+.playerThree {
+  font-weight: bold;
+}
+
+.leftScoreCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+input {
+  width: fit-content;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }

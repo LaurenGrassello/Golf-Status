@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
-import CourseList from "./CourseList";
 
 const CourseForm = ({ onSave, courses }) => {
   const { id } = useParams();
@@ -141,8 +140,9 @@ const CourseForm = ({ onSave, courses }) => {
     <section>
       {renderErrors()}
 
-      <h2>New ScoreCard</h2>
+      <h2>ScoreCard</h2>
       <form className="courseForm" onSubmit={handleSubmit}>
+        <div className="leftScoreCard">
         <div>
           <label htmlFor="name">
             <strong>Course Name:</strong>
@@ -170,7 +170,7 @@ const CourseForm = ({ onSave, courses }) => {
         <div>
           <label htmlFor="player_one">
             <strong>Player One:</strong>
-            <textarea
+            <input
               type="text"
               id="player_one"
               name="player_one"
@@ -182,7 +182,7 @@ const CourseForm = ({ onSave, courses }) => {
         <div>
           <label htmlFor="player_two">
             <strong>Player Two:</strong>
-            <textarea
+            <input
               type="text"
               id="player_two"
               name="player_two"
@@ -194,7 +194,7 @@ const CourseForm = ({ onSave, courses }) => {
         <div>
           <label htmlFor="player_three">
             <strong>Player Three:</strong>
-            <textarea
+            <input
               type="text"
               id="player_three"
               name="player_three"
@@ -203,10 +203,16 @@ const CourseForm = ({ onSave, courses }) => {
             />
           </label>
         </div>
+         </div>
+         <div className="row">
+            <h2>Player Scores</h2>
+        <div className="column">
         <div>
           <label htmlFor="p_one_s_one">
-            <strong>Player One Score Hole One:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole One:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_one"
               name="p_one_s_one"
@@ -217,8 +223,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_two">
-            <strong>Player One Score Hole Two:</strong>
-            <textarea
+            <div>
+                <strong>Player One Hole Two:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_two"
               name="p_one_s_two"
@@ -229,8 +237,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_three">
-            <strong>Player One Score Hole Three:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Three:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_three"
               name="p_one_s_three"
@@ -241,8 +251,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_four">
-            <strong>Player One Score Hole Four:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Four:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_four"
               name="p_one_s_four"
@@ -253,8 +265,24 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_five">
-            <strong>Player One Score Hole Five:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Five:</strong>
+            </div>
+            <input
+              type="number"
+              id="p_one_s_five"
+              name="p_one_s_five"
+              onChange={handleInputChange}
+              value={course.p_one_s_five}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="p_one_s_six">
+            <div>
+            <strong>Player One Hole Six:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_six"
               name="p_one_s_six"
@@ -265,20 +293,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_seven">
-            <strong>Player One Score Hole Seven:</strong>
-            <textarea
-              type="number"
-              id="p_one_s_seven"
-              name="p_one_s_seven"
-              onChange={handleInputChange}
-              value={course.p_one_s_seven}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="p_one_s_seven">
-            <strong>Player One Score Hole Seven:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Seven:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_seven"
               name="p_one_s_seven"
@@ -289,8 +307,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_eight">
-            <strong>Player One Score Hole Eight:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Eight:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_eight"
               name="p_one_s_eight"
@@ -301,8 +321,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_nine">
-            <strong>Player One Score Hole Nine:</strong>
-            <textarea
+<div>
+            <strong>Player One Hole Nine:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_nine"
               name="p_one_s_nine"
@@ -313,8 +335,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_ten">
-            <strong>Player One Score Hole Ten:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Ten:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_ten"
               name="p_one_s_ten"
@@ -325,8 +349,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_eleven">
-            <strong>Player One Score Hole Eleven:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Eleven:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_eleven"
               name="p_one_s_eleven"
@@ -337,8 +363,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_twelve">
-            <strong>Player One Score Hole Twelve:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Twelve:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_twelve"
               name="p_one_s_twelve"
@@ -349,8 +377,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_thirteen">
-            <strong>Player One Score Hole Thirteen:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Thirteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_thirteen"
               name="p_one_s_thirteen"
@@ -361,8 +391,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_fourteen">
-            <strong>Player One Score Hole Fourteen:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Fourteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_fourteen"
               name="p_one_s_fourteen"
@@ -373,8 +405,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_fifteen">
-            <strong>Player One Score Hole Fifteen:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Fifteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_fifteen"
               name="p_one_s_fifteen"
@@ -385,8 +419,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_sixteen">
-            <strong>Player One Score Hole Sixteen:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Sixteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_sixteen"
               name="p_one_s_sixteen"
@@ -397,8 +433,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_seventeen">
-            <strong>Player One Score Hole Seventeen:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Seventeen:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_seventeen"
               name="p_one_s_seventeen"
@@ -409,8 +447,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_one_s_eighteen">
-            <strong>Player One Score Hole Eighteen:</strong>
-            <textarea
+            <div>
+            <strong>Player One Hole Eighteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_one_s_eighteen"
               name="p_one_s_eighteen"
@@ -419,10 +459,14 @@ const CourseForm = ({ onSave, courses }) => {
             />
           </label>
         </div>
+        </div>
+        <div className="column">
         <div>
           <label htmlFor="p_two_s_one">
-            <strong>Player Two Score Hole One:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole One:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_one"
               name="p_two_s_one"
@@ -433,8 +477,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_two">
-            <strong>Player Two Score Hole Two:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Two:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_two"
               name="p_two_s_two"
@@ -445,8 +491,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_three">
-            <strong>Player Two Score Hole Three:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Three:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_three"
               name="p_two_s_three"
@@ -457,8 +505,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_four">
-            <strong>Player Two Score Hole Four:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Four:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_four"
               name="p_two_s_four"
@@ -469,8 +519,24 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_five">
-            <strong>Player Two Score Hole Five:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Five:</strong>
+            </div>
+            <input
+              type="number"
+              id="p_two_s_five"
+              name="p_two_s_five"
+              onChange={handleInputChange}
+              value={course.p_two_s_five}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="p_two_s_six">
+            <div>
+            <strong>Player Two Hole Six:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_six"
               name="p_two_s_six"
@@ -481,20 +547,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_seven">
-            <strong>Player Two Score Hole Seven:</strong>
-            <textarea
-              type="number"
-              id="p_two_s_seven"
-              name="p_two_s_seven"
-              onChange={handleInputChange}
-              value={course.p_two_s_seven}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="p_two_s_seven">
-            <strong>Player Two Score Hole Seven:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Seven:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_seven"
               name="p_two_s_seven"
@@ -505,8 +561,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_eight">
-            <strong>Player Two Score Hole Eight:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Eight:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_eight"
               name="p_two_s_eight"
@@ -517,8 +575,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_nine">
-            <strong>Player Two Score Hole Nine:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Nine:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_nine"
               name="p_two_s_nine"
@@ -529,8 +589,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_ten">
-            <strong>Player Two Score Hole Ten:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Ten:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_ten"
               name="p_two_s_ten"
@@ -541,8 +603,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_eleven">
-            <strong>Player Two Score Hole Eleven:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Eleven:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_eleven"
               name="p_two_s_eleven"
@@ -553,8 +617,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_twelve">
-            <strong>Player Two Score Hole Twelve:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Twelve:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_twelve"
               name="p_two_s_twelve"
@@ -565,8 +631,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_thirteen">
-            <strong>Player Two Score Hole Thirteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Thirteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_thirteen"
               name="p_two_s_thirteen"
@@ -577,8 +645,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_fourteen">
-            <strong>Player Two Score Hole Fourteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Fourteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_fourteen"
               name="p_two_s_fourteen"
@@ -589,8 +659,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_fifteen">
-            <strong>Player Two Score Hole Fifteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Fifteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_fifteen"
               name="p_two_s_fifteen"
@@ -601,8 +673,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_sixteen">
-            <strong>Player Two Score Hole Sixteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Sixteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_sixteen"
               name="p_two_s_sixteen"
@@ -613,8 +687,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_seventeen">
-            <strong>Player Two Score Hole Seventeen:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Seventeen:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_seventeen"
               name="p_two_s_seventeen"
@@ -625,8 +701,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_two_s_eighteen">
-            <strong>Player Two Score Hole Eighteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Two Hole Eighteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_two_s_eighteen"
               name="p_two_s_eighteen"
@@ -635,10 +713,14 @@ const CourseForm = ({ onSave, courses }) => {
             />
           </label>
         </div>
+        </div>
+        <div className="column">
         <div>
           <label htmlFor="p_three_s_one">
-            <strong>Player Three Score Hole One:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole One:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_one"
               name="p_three_s_one"
@@ -649,8 +731,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_two">
-            <strong>Player Three Score Hole Two:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Two:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_two"
               name="p_three_s_two"
@@ -661,8 +745,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_three">
-            <strong>Player Three Score Hole Three:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Three:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_three"
               name="p_three_s_three"
@@ -673,8 +759,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_four">
-            <strong>Player Three Score Hole Four:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Four:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_four"
               name="p_three_s_four"
@@ -685,8 +773,24 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_five">
-            <strong>Player Three Score Hole Five:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Five:</strong>
+            </div>
+            <input
+              type="number"
+              id="p_three_s_five"
+              name="p_three_s_five"
+              onChange={handleInputChange}
+              value={course.p_three_s_five}
+            />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="p_three_s_six">
+            <div>
+            <strong>Player Three Hole Six:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_six"
               name="p_three_s_six"
@@ -697,20 +801,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_seven">
-            <strong>Player Three Score Hole Seven:</strong>
-            <textarea
-              type="number"
-              id="p_three_s_seven"
-              name="p_three_s_seven"
-              onChange={handleInputChange}
-              value={course.p_three_s_seven}
-            />
-          </label>
-        </div>
-        <div>
-          <label htmlFor="p_three_s_seven">
-            <strong>Player Three Score Hole Seven:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Seven:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_seven"
               name="p_three_s_seven"
@@ -721,8 +815,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_eight">
-            <strong>Player Three Score Hole Eight:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Eight:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_eight"
               name="p_three_s_eight"
@@ -733,8 +829,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_nine">
-            <strong>Player Three Score Hole Nine:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Nine:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_nine"
               name="p_three_s_nine"
@@ -745,8 +843,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_ten">
-            <strong>Player Three Score Hole Ten:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Ten:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_ten"
               name="p_three_s_ten"
@@ -757,8 +857,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_eleven">
-            <strong>Player Three Score Hole Eleven:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Eleven:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_eleven"
               name="p_three_s_eleven"
@@ -769,8 +871,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_twelve">
-            <strong>Player Three Score Hole Twelve:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Twelve:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_twelve"
               name="p_three_s_twelve"
@@ -781,8 +885,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_thirteen">
-            <strong>Player Three Score Hole Thirteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Thirteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_thirteen"
               name="p_three_s_thirteen"
@@ -793,8 +899,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_fourteen">
-            <strong>Player Three Score Hole Fourteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Fourteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_fourteen"
               name="p_three_s_fourteen"
@@ -805,8 +913,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_fifteen">
-            <strong>Player Three Score Hole Fifteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Fifteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_fifteen"
               name="p_three_s_fifteen"
@@ -817,8 +927,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_sixteen">
-            <strong>Player Three Score Hole Sixteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Sixteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_sixteen"
               name="p_three_s_sixteen"
@@ -829,8 +941,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_seventeen">
-            <strong>Player Three Score Hole Seventeen:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Seventeen:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_seventeen"
               name="p_three_s_seventeen"
@@ -841,8 +955,10 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         <div>
           <label htmlFor="p_three_s_eighteen">
-            <strong>Player Three Score Hole Eighteen:</strong>
-            <textarea
+            <div>
+            <strong>Player Three Hole Eighteen:</strong>
+            </div>
+            <input
               type="number"
               id="p_three_s_eighteen"
               name="p_three_s_eighteen"
@@ -850,6 +966,8 @@ const CourseForm = ({ onSave, courses }) => {
               value={course.p_three_s_eighteen}
             />
           </label>
+        </div>
+        </div>
         </div>
         <div className="form-actions">
           <button type="submit">Save</button>

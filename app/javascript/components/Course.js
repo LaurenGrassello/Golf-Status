@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { useParams, Link } from 'react-router-dom';
+import React from "react";
+import PropTypes from "prop-types";
+import { useParams, Link } from "react-router-dom";
 
 const Course = ({ courses, onDelete }) => {
     const { id } = useParams();
@@ -8,7 +8,7 @@ const Course = ({ courses, onDelete }) => {
 
     return (
         <>
-            <div className='courseContainer'>
+            <div className="courseContainer">
                 <h2>
                     {course.name} | Holes {course.holes}
                     <Link to={`/courses/${course.id}/edit`}>Add Score</Link>
@@ -46,7 +46,7 @@ const Course = ({ courses, onDelete }) => {
                         <th>IN</th>
                     </tr>
                     <tr>
-                        <td>Blue 73.8/137</td>
+                        <td className="blueTee">Blue 73.8/137</td>
                         <td>356</td>
                         <td>527</td>
                         <td>194</td>
@@ -70,7 +70,7 @@ const Course = ({ courses, onDelete }) => {
                         <td>6972</td>
                     </tr>
                     <tr>
-                        <td>Dark Green 71.0/131</td>
+                        <td className="darkGreenTee">Dark Green 71.0/131</td>
                         <td>332</td>
                         <td>518</td>
                         <td>163</td>
@@ -94,7 +94,7 @@ const Course = ({ courses, onDelete }) => {
                         <td>6465</td>
                     </tr>
                     <tr>
-                        <td>Grey 68.2/124</td>
+                        <td className="greyTee">Grey 68.2/124</td>
                         <td>314</td>
                         <td>506</td>
                         <td>136</td>
@@ -118,7 +118,7 @@ const Course = ({ courses, onDelete }) => {
                         <td>5791</td>
                     </tr>
                     <tr>
-                        <td>{course.player_one}</td>
+                        <td className="playerOne">{course.player_one}</td>
                         <td>{course.p_one_s_one}</td>
                         <td>{course.p_one_s_two}</td>
                         <td>{course.p_one_s_three}</td>
@@ -139,7 +139,7 @@ const Course = ({ courses, onDelete }) => {
                         <td>{course.p_one_s_eighteen}</td>
                     </tr>
                     <tr>
-                        <td>{course.player_two}</td>
+                        <td className="playerTwo">{course.player_two}</td>
                         <td>{course.p_two_s_one}</td>
                         <td>{course.p_two_s_two}</td>
                         <td>{course.p_two_s_three}</td>
@@ -158,29 +158,29 @@ const Course = ({ courses, onDelete }) => {
                         <td>{course.p_two_s_sixteen}</td>
                         <td>{course.p_two_s_seventeen}</td>
                         <td>{course.p_two_s_eighteen}</td>
-                        <tr>
-                            <td>{course.player_three}</td>
-                            <td>{course.p_three_s_one}</td>
-                            <td>{course.p_three_s_two}</td>
-                            <td>{course.p_three_s_three}</td>
-                            <td>{course.p_three_s_four}</td>
-                            <td>{course.p_three_s_five}</td>
-                            <td>{course.p_three_s_six}</td>
-                            <td>{course.p_three_s_seven}</td>
-                            <td>{course.p_three_s_eight}</td>
-                            <td>{course.p_three_s_nine}</td>
-                            <td>{course.p_three_s_ten}</td>
-                            <td>{course.p_three_s_eleven}</td>
-                            <td>{course.p_three_s_twelve}</td>
-                            <td>{course.p_three_s_thirteen}</td>
-                            <td>{course.p_three_s_fourteen}</td>
-                            <td>{course.p_three_s_fifteen}</td>
-                            <td>{course.p_three_s_sixteen}</td>
-                            <td>{course.p_three_s_seventeen}</td>
-                            <td>{course.p_three_s_eighteen}</td>
-                        </tr>
+                    </tr>
+                    <tr>
+                        <td className="playerThree">{course.player_three}</td>
+                        <td>{course.p_three_s_one}</td>
+                        <td>{course.p_three_s_two}</td>
+                        <td>{course.p_three_s_three}</td>
+                        <td>{course.p_three_s_four}</td>
+                        <td>{course.p_three_s_five}</td>
+                        <td>{course.p_three_s_six}</td>
+                        <td>{course.p_three_s_seven}</td>
+                        <td>{course.p_three_s_eight}</td>
+                        <td>{course.p_three_s_nine}</td>
+                        <td>{course.p_three_s_ten}</td>
+                        <td>{course.p_three_s_eleven}</td>
+                        <td>{course.p_three_s_twelve}</td>
+                        <td>{course.p_three_s_thirteen}</td>
+                        <td>{course.p_three_s_fourteen}</td>
+                        <td>{course.p_three_s_fifteen}</td>
+                        <td>{course.p_three_s_sixteen}</td>
+                        <td>{course.p_three_s_seventeen}</td>
+                        <td>{course.p_three_s_eighteen}</td>
+                    </tr>
                 </table>
-
             </div>
         </>
     );
@@ -194,7 +194,7 @@ Course.propTypes = {
             holes: PropTypes.number.isRequired,
             player_one: PropTypes.string.isRequired,
             player_two: PropTypes.string.isRequired,
-            player_three: PropTypes.string.isRequired
+            player_three: PropTypes.string.isRequired,
         })
     ).isRequired,
     onDelete: PropTypes.func.isRequired,
