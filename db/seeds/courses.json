@@ -1,18 +1,30 @@
 [
     {
         "name": "Aspen Lakes Golf Course",
-        "holes": 18
+        "holes": 18,
+        "player_one": "Mark",
+        "player_two": "Rachel",
+        "player_three": "Tim"
     },
     {
         "name": "Buffalo Hill Golf Course",
-        "holes": 18
+        "holes": 18,
+        "player_one": "Haley",
+        "player_two": "Molly",
+        "player_three": "Jill"
     },
     {
         "name": "High Cedars Golf Club",
-        "holes": 18
+        "holes": 18,
+        "player_one": "Bill",
+        "player_two": "Oscar",
+        "player_three": "Hank"
     },
     {
         "name": "Ridge Golf Course",
-        "holes": 18
+        "holes": 18,
+        "player_one": "Mikayla",
+        "player_two": "Maddison",
+        "player_three": "Dora"
     }
 ]
