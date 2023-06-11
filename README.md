@@ -1,4 +1,4 @@
-<h1>CRUD App with Ruby and React - code sample for GolfStatus</h1>
+<h1>CRUD Rails on React - code sample for GolfStatus</h1>
 
 <h2>Requirements<h2>
 <ul>
