@@ -4,11 +4,11 @@ import CourseList from "./CourseList";
 import { Routes, Route, useNavigate, Link } from "react-router-dom";
 import Course from "./Course";
 import CourseForm from "./CourseForm";
+import { handleAjaxError } from '../helpers/helpers';
 
 const Editor = () => {
   const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,8 +19,7 @@ const Editor = () => {
         const data = await response.json();
         setCourses(data);
       } catch (error) {
-        setIsError(true);
-        console.error(error);
+        handleAjaxError(error);
       }
 
       setIsLoading(false);
@@ -44,10 +43,10 @@ const Editor = () => {
       const savedCourse = await response.json();
       const newCourses = [...courses, savedCourse];
       setCourses(newCourses);
-      window.alert("Course Added!");
+      success('Course Added!');;
       navigate(`/courses/${savedCourse.id}`);
     } catch (error) {
-      console.error(error);
+      handleAjaxError(error);
     }
   };
 
@@ -62,11 +61,11 @@ const Editor = () => {
 
         if (!response.ok) throw Error(response.statusText);
 
-        window.alert("Course Deleted!");
+        success('Course Deleted!');;
         navigate("/courses");
         setCourses(courses.filter((course) => course.id !== courseId));
       } catch (error) {
-        console.error(error);
+        handleAjaxError(error);
       }
     }
   };
@@ -94,7 +93,7 @@ const Editor = () => {
       success("Score Updated!");
       navigate(`/courses/${updatedCourse.id}`);
     } catch (error) {
-      console.error(error);
+      handleAjaxError(error);
     }
   };
 
@@ -102,7 +101,6 @@ const Editor = () => {
     <>
       <Header />
       <div className="grid">
-        {isError && <p>Something went wrong. Check the console.</p>}
         {isLoading ? (
           <p className="loading">Loading...</p>
         ) : (

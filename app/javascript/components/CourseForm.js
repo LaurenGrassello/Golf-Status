@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import PropTypes from "prop-types";
+import { isEmptyObject, validateCourse} from '../helpers/helpers';
 
 const CourseForm = ({ onSave, courses }) => {
   const { id } = useParams();
@@ -79,34 +80,6 @@ const CourseForm = ({ onSave, courses }) => {
 
     setCourse({ ...course, [name]: value });
   };
-
-  const validateCourse = () => {
-    const errors = {};
-
-    if (course.name === "") {
-      errors.name = "You must enter a course name";
-    }
-
-    if (course.holes === "") {
-      errors.holes = "You must enter courses hole total";
-    }
-
-    if (course.player_one === "") {
-      errors.player_one = "You must enter player one";
-    }
-
-    if (course.player_two === "") {
-      errors.player_two = "You must enter player two";
-    }
-
-    if (course.player_three === "") {
-      errors.player_three = "You must enter player three";
-    }
-
-    return errors;
-  };
-
-  const isEmptyObject = (obj) => Object.keys(obj).length === 0;
 
   const renderErrors = () => {
     if (isEmptyObject(formErrors)) {
