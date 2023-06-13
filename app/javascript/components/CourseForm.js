@@ -970,7 +970,7 @@ const CourseForm = ({ onSave, courses }) => {
         </div>
         </div>
         <div className="form-actions">
-          <button type="submit">Save</button>
+          <button className="save" type="submit">Save</button>
         </div>
       </form>
     </section>
